@@ -1,0 +1,138 @@
+.shop-now-btn {
+    background-color: var(--black);
+}
+
+.shop-now-btn a {
+    color: var(--white);
+}
+
+.shop-now-btn:hover {
+    color: var(--black);
+    border: 2px solid var(--black);
+    background-color: var(--white);
+}
+
+.shop-now-btn a:hover {
+    color: var(--black);
+}
+
+.section-name {
+    color: var(--white);
+    padding: 1rem 0 0 2rem;
+    font-weight: normal;
+}
+
+.img-container {
+    position: relative;
+    width: auto;
+    padding: 0;
+}
+
+.overlay {
+    background: var(--white);
+}
+
+.img-txt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    max-height: 630px;
+}
+
+.img-txt img {
+    opacity: 0.9;
+    transform: scale(1);
+}
+
+.img-responsive {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    filter: blur(4px);
+}
+
+.txt-overlay {
+    font-size: 2rem;
+    /* text-transform: uppercase; */
+    font-weight: 600;
+}
+
+.txt-overlay {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    text-align: center;
+    color: var(--white);
+    /* text-shadow: 2px 2px 3px var(--white); */
+    width: 60%;
+}
+
+.content-heading {
+    font-size: 5vw;
+    font-weight: 900;
+}
+
+.sub-heading {
+    font-size: 3vw;
+    font-weight: 400;
+}
+
+.btn-links-light {
+    color: var(--black);
+}
+
+.btn-links-light:hover {
+    color: var(--white);
+}
+
+/* Products brands */
+
+.brands-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--primary-light);
+    border-radius: 10px;
+}
+
+.brand-box {
+    display: flex;
+    padding: 0.2rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brand-box img {
+    opacity: 0.7;
+    transform: scale(1);
+    z-index: 4;
+}
+
+.brand-logo {
+    width: 20vw;
+    transition: all 0.3s ease-in-out;
+}
+
+.brand-logo:hover {
+    opacity: 1;
+}
+
+.brand-name {
+    width: 13vw;
+    transition: all 0.3s ease-in-out;
+}
+
+.brand-name:hover {
+    opacity: 1;
+}
+
+.guitar-type {
+    color: var(--white);
+    text-align: center;
+    font-weight: normal;
+    text-transform: uppercase;
+}

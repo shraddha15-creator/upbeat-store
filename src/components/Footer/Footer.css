@@ -1,0 +1,33 @@
+/* footer */
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    background: var(--primary-light);
+    margin: 0 1rem;
+    padding: 1rem 5rem;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+    gap: 0.7rem;
+}
+
+.footer-mid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    font-size: 0.8rem;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.icon-footer {
+    font-size: 2rem;
+}
