@@ -15,7 +15,7 @@ export const categories = [
 	},
 	{
 		_id: uuid(),
-		categoryName: "Electic",
+		categoryName: "Electric",
 		img: "https://raw.githubusercontent.com/shraddha15-creator/e-commerce/dev/images/electric-guitar.jpg",
 		description:
 			"Non-fiction is writing that gives information or describes real events, rather than telling a story.",
