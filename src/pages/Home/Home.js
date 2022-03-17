@@ -42,17 +42,17 @@ function Home() {
 				<h3 className="section-name">Shop by Category</h3>
 				<div className="brands-container">
 					{guitarCategories &&
-						guitarCategories.map((item) => {
+						guitarCategories.map(({ img, categoryName }) => {
 							return (
 								<div className="brand-box">
 									<img
-										src={item.img}
+										src={img}
 										alt="guitar-pic"
 										className="brand-logo img-main img-round"
 									/>
 									<a href="">
 										<h5 className="guitar-type">
-											{item.categoryName}
+											{categoryName}
 										</h5>
 									</a>
 								</div>
