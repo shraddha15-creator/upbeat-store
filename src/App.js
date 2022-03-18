@@ -1,10 +1,19 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import logo from "./logo.png";
+import { Navbar, Footer } from "./components/index";
+import Home from "./pages/Home/Home";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
 	return (
 		<div className="App">
-			<h2>ecommerce</h2>
+			<BrowserRouter>
+				<Navbar />
+				<Routes>
+					<Route path="/" element={<Home />} />
+				</Routes>
+				<Footer />
+			</BrowserRouter>
 		</div>
 	);
 }
