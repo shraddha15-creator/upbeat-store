@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 
-function Home() {
+export function Home() {
 	const [guitarCategories, setGuitarCategories] = useState();
 
 	useEffect(() => {
@@ -31,9 +32,11 @@ function Home() {
 							href="./screens/products-list/products.html"
 							className="links"
 						>
-							<button className="shop-now-btn btn btn-primary btn-dark">
-								Shop Now
-							</button>
+							<Link to="/products">
+								<button className="shop-now-btn btn btn-primary btn-dark">
+									Shop Now
+								</button>
+							</Link>
 						</a>
 					</div>
 				</div>
@@ -63,5 +66,3 @@ function Home() {
 		</>
 	);
 }
-
-export default Home;
