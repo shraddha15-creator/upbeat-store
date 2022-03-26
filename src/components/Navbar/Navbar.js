@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 export function Navbar() {
@@ -23,16 +24,32 @@ export function Navbar() {
 				</div>
 
 				<div className="right-nav">
-					<a href="./screens/cart/cart.html">
-						<i className="fa fa-cart-plus icon"></i>
-					</a>
-					<a href="./screens/wishlist/wishlist.html">
-						<i className="fa fa-bookmark icon"></i>
-					</a>
+					<div className="badge-content">
+						<div className="badge">
+							<Link to="/cart">
+								<i className="fa fa-cart-plus icon"></i>
+								<div className="icon-badge">
+									<span className="badge-nums">1</span>
+								</div>
+							</Link>
+						</div>
+					</div>
+					<div className="badge-content">
+						<div className="badge">
+							<Link to="/wishlist">
+								<i className="fa fa-bookmark icon"></i>
+								<div className="icon-badge">
+									<span className="badge-nums">1</span>
+								</div>
+							</Link>
+						</div>
+					</div>
 					<a href="./screens/login/login.html" className="links">
-						<button className="btn btn-primary login-btn">
-							Login
-						</button>
+						<Link to="/login ">
+							<button className="btn btn-primary login-btn">
+								Login
+							</button>
+						</Link>
 					</a>
 				</div>
 			</div>
