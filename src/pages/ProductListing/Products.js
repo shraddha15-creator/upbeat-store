@@ -10,12 +10,15 @@ import {
 	priceRangeFunction,
 	ratingsProductFunction,
 } from "../../utilities";
+import ProductCard from "../../components/Card/ProductCard";
+import { useWishlist } from "../../context/wishlist-context";
 
 export function Products() {
 	const [products, setProducts] = useState([]);
 	const {
 		state: { sortBy, categories, category, priceRange, rating },
 	} = useFilter();
+	const { addToWishlist } = useWishlist();
 
 	useEffect(() => {
 		(async () => {
@@ -30,10 +33,7 @@ export function Products() {
 
 	const sortedProducts = sortFunction(products, sortBy);
 	const filterdProducts = filterFunction(sortedProducts, categories);
-	const categoriesTypeProducts = categoriesFunction(
-		filterdProducts,
-		category
-	);
+	const categoriesTypeProducts = categoriesFunction(filterdProducts, category);
 	const priceRangeProducts = priceRangeFunction(
 		categoriesTypeProducts,
 		priceRange
@@ -55,52 +55,38 @@ export function Products() {
 						</h2>
 						<div className="total-products-container">
 							{ratingsProducts &&
-								ratingsProducts.map((product) => {
-									return (
-										<>
-											<div className="card-container ">
-												<div className="card-img-container">
-													<img
-														className="img-card"
-														src={product.img}
-														alt="product-image"
-													/>
-												</div>
-												<div className="card-details-container">
-													<a
-														href="../single-product/single.html"
-														className="card-product-brand"
-													>
-														{product.brand}
-													</a>
-													<h6 className="card-product-name">
-														{product.title}
-													</h6>
-													<h6 className="card-product-price">
-														Rs.
-														{product.OriginalPrice}
-													</h6>
-													<h6 className="card-product-offer">
-														<span className="pro-off">
-															Offer Price:
-														</span>
-														Rs. {product.offerPrice}
-													</h6>
-													<p className="product-ratings">
-														{product.rating}
-														<i class="fa fa-star icon-star-rating"></i>
-													</p>
-												</div>
-												<button className="btn btn-dark">
-													Add to Cart
-												</button>
-												<button className="btn btn-light">
-													Add to Wishlist
-												</button>
-											</div>
-										</>
-									);
-								})}
+								ratingsProducts.map(
+									({
+										_id,
+										img,
+										brand,
+										title,
+										OriginalPrice,
+										offerPrice,
+										rating,
+									}) => (
+										<ProductCard
+											key={_id}
+											img={img}
+											brand={brand}
+											title={title}
+											originalPrice={OriginalPrice}
+											offerPrice={offerPrice}
+											rating={rating}
+											addToWishlist={() =>
+												addToWishlist({
+													_id,
+													img,
+													brand,
+													title,
+													OriginalPrice,
+													offerPrice,
+													rating,
+												})
+											}
+										/>
+									)
+								)}
 						</div>
 					</div>
 				</div>

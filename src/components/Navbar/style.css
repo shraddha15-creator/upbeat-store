@@ -39,8 +39,17 @@ input:focus {
 }
 
 .icon {
-    font-size: 1rem;
+    font-size: 1.3rem;
     text-align: center;
+}
+
+.icon:hover {
+    background-color: rgba(255, 255, 255, 0.489);
+}
+
+.icon-badge {
+    height: 15px;
+    width: 1px;
 }
 
 /* Media queries */

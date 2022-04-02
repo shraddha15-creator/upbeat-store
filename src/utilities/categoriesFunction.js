@@ -5,7 +5,6 @@ const categoriesFunction = (filterdProducts, category) => {
 			(item) => item.categoryName === "acoustic"
 		);
 		total = [...total, ...acoustic];
-		console.log(total);
 	}
 	if (category.electric) {
 		const electric = [...filterdProducts].filter(
@@ -24,7 +23,6 @@ const categoriesFunction = (filterdProducts, category) => {
 			(item) => item.categoryName === "classic"
 		);
 		total = [...total, ...classic];
-		console.log(total);
 		return total;
 	}
 	if (total.length !== 0) return total;
