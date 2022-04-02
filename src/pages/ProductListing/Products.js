@@ -70,7 +70,7 @@ export function Products() {
 											img={img}
 											brand={brand}
 											title={title}
-											originalPrice={OriginalPrice}
+											OriginalPrice={OriginalPrice}
 											offerPrice={offerPrice}
 											rating={rating}
 											addToWishlist={() =>

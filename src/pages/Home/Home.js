@@ -1,10 +1,12 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useFilter } from "../../context/filter-context";
 import "./Home.css";
 
 export function Home() {
 	const [guitarCategories, setGuitarCategories] = useState();
+	const { dispatch } = useFilter();
 
 	useEffect(() => {
 		axios
@@ -28,10 +30,7 @@ export function Home() {
 						<div className="content-heading">
 							Start Your Musical Journey With Upbeat!
 						</div>
-						<a
-							href="./screens/products-list/products.html"
-							className="links"
-						>
+						<a href="./screens/products-list/products.html" className="links">
 							<Link to="/products">
 								<button className="shop-now-btn btn btn-primary btn-dark">
 									Shop Now
@@ -45,20 +44,25 @@ export function Home() {
 				<h3 className="section-name">Shop by Category</h3>
 				<div className="brands-container">
 					{guitarCategories &&
-						guitarCategories.map(({ img, categoryName }) => {
+						guitarCategories.map(({ id, img, categoryName }) => {
 							return (
-								<div className="brand-box">
-									<img
-										src={img}
-										alt="guitar-pic"
-										className="brand-logo img-main img-round"
-									/>
-									<a href="">
-										<h5 className="guitar-type">
-											{categoryName}
-										</h5>
-									</a>
-								</div>
+								<Link
+									to="/products"
+									onClick={() => {
+										dispatch({ type: "CATEGORY", payload: categoryName });
+									}}
+								>
+									<div key={id} className="brand-box">
+										<img
+											src={img}
+											alt="guitar-pic"
+											className="brand-logo img-main img-round"
+										/>
+										<a href="">
+											<h5 className="guitar-type">{categoryName}</h5>
+										</a>
+									</div>
+								</Link>
 							);
 						})}
 				</div>
