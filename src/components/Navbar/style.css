@@ -48,10 +48,8 @@ input:focus {
 }
 
 .icon-badge {
-    /* background-color: yellow; */
     height: 15px;
     width: 1px;
-    /* padding: 0.1rem 0.5rem; */
 }
 
 /* Media queries */

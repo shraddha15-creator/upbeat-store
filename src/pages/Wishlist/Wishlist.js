@@ -3,12 +3,9 @@ import { Link } from "react-router-dom";
 import WishlistCard from "../../components/Card/WishlistCard";
 import { useWishlist } from "../../context/wishlist-context";
 import "./wishlist.css";
-import emptyWishlist from "../../assets/empty-wishlist.png";
 
 const Wishlist = () => {
-	const { wishlistProducts } = useWishlist();
-	console.log(wishlistProducts);
-	const { removeFromWishlist } = useWishlist();
+	const { wishlistProducts, removeFromWishlist } = useWishlist();
 	return (
 		<>
 			<div class="wishlist-product-container">
@@ -21,9 +18,8 @@ const Wishlist = () => {
 
 				{wishlistProducts.length < 1 && (
 					<div className="empty-wishlist-container">
-						{/* <img src={emptyWishlist} /> */}
 						<h1>🛍️</h1>
-						<p>There is nothing in your wishlist, Let's add something!</p>'
+						<p>There is nothing in your wishlist, Let's add something!</p>
 						<Link to="/products">
 							<button className=" btn btn-secondary btn-dark">
 								Add Items to Wishlist

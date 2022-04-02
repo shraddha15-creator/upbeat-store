@@ -16,7 +16,6 @@ const WishlistProvider = ({ children }) => {
 				{ headers: { authorization: encodedToken } }
 			);
 			setWishlistProducts(response.data.wishlist);
-			console.log(response);
 		} catch (error) {
 			console.error(error);
 		}
@@ -24,14 +23,10 @@ const WishlistProvider = ({ children }) => {
 
 	const removeFromWishlist = async (productId) => {
 		try {
-			const response = await axios.delete(
-				`/api/user/wishlist/${productId}`,
-				// { product },
-				{ headers: { authorization: encodedToken } }
-			);
-			console.log(response.data, "product deleted");
+			const response = await axios.delete(`/api/user/wishlist/${productId}`, {
+				headers: { authorization: encodedToken },
+			});
 			setWishlistProducts(response.data.wishlist);
-			console.log(response);
 		} catch (error) {
 			console.error("==>while deleting", error);
 		}
