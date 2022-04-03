@@ -32,17 +32,6 @@ const WishlistProvider = ({ children }) => {
 		}
 	};
 
-	useEffect(() => {
-		(async function getWishlistProduct() {
-			try {
-				const response = await axios.get("/api/users/wishlist");
-				setWishlistProducts(response.data.wishlist);
-			} catch (error) {
-				console.error(error);
-			}
-		})();
-	}, []);
-
 	return (
 		<WishlistContext.Provider
 			value={{
