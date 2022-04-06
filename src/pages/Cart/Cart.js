@@ -7,7 +7,8 @@ import { useWishlist } from "../../context/wishlist-context";
 import "./cart.css";
 
 const Cart = () => {
-	const { cartItems, moveToWishlist } = useCart();
+	const { cartItems } = useCart();
+	const { addToWishlist } = useWishlist();
 	return (
 		<>
 			{cartItems && cartItems.length > 0 ? (
@@ -19,7 +20,7 @@ const Cart = () => {
 									<CartCard
 										key={cartItem.id}
 										product={cartItem}
-										moveToWishlist={moveToWishlist}
+										addToWishlist={addToWishlist}
 									/>
 								);
 							})}

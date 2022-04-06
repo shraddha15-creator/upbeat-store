@@ -1,10 +1,18 @@
 import React from "react";
 import { useCart } from "../../context/cart-context";
-import { useWishlist } from "../../context/wishlist-context";
 
 const CartCard = ({ product }) => {
-	const { _id, img, brand, title, OriginalPrice, offerPrice, qty } = product;
-	const { removeFromCart, getQt, moveToWishlist } = useCart();
+	const {
+		_id,
+		img,
+		brand,
+		title,
+		OriginalPrice,
+		offerPrice,
+		qty,
+		addToWishlist,
+	} = product;
+	const { removeFromCart, getQt } = useCart();
 	return (
 		<>
 			<div className="card-horizontal">
@@ -41,7 +49,8 @@ const CartCard = ({ product }) => {
 					</button>
 					<button
 						className="btn btn-with-links add-to-wshl-btn"
-						onClick={() => moveToWishlist({ _id, brand, title })}
+						onClick={() => addToWishlist({ _id, brand, title })}
+						// onClick={addToWishlist}
 					>
 						Add to Wishlist
 					</button>

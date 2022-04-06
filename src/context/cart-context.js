@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState, createContext, useContext } from "react";
-import { useWishlist } from "./wishlist-context";
 
 const CartContext = createContext();
 
