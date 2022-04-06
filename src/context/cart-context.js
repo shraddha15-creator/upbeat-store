@@ -1,12 +1,12 @@
 import axios from "axios";
-import { useState, useEffect, createContext, useContext } from "react";
+import { useState, createContext, useContext } from "react";
 import { useWishlist } from "./wishlist-context";
 
 const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
 	const [cartItems, setCartItems] = useState();
-	const { setWishlistProducts } = useWishlist();
+	// const { setWishlistProducts } = useWishlist();
 
 	const encodedToken =
 		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI4NDA1MjA4MS1hNjAwLTQ2YmQtYTNhZS0yZDljNTU2YTQ0NzgiLCJlbWFpbCI6ImFkYXJzaGJhbGlrYUBnbWFpbC5jb20ifQ.gaqvCVkY0hv54te82TnyI8W3iLXNbRScUytBNaTE3GM";
@@ -37,19 +37,19 @@ const CartProvider = ({ children }) => {
 		}
 	};
 
-	const moveToWishlist = async (product) => {
-		try {
-			const response = await axios.post(
-				`/api/user/wishlist`,
-				{ products: product },
-				{ headers: { authorization: encodedToken } }
-			);
-			setWishlistProducts(response.data.wishlist);
-			removeFromCart(product._id);
-		} catch (error) {
-			console.error("WHILE");
-		}
-	};
+	// const moveToWishlist = async (product) => {
+	// 	try {
+	// 		const response = await axios.post(
+	// 			`/api/user/wishlist`,
+	// 			{ products: product },
+	// 			{ headers: { authorization: encodedToken } }
+	// 		);
+	// 		setWishlistProducts(response.data.wishlist);
+	// 		removeFromCart(product._id);
+	// 	} catch (error) {
+	// 		console.error("WHILE");
+	// 	}
+	// };
 
 	const getQt = async (productId, btnType) => {
 		try {
@@ -74,7 +74,7 @@ const CartProvider = ({ children }) => {
 
 	return (
 		<CartContext.Provider
-			value={{ cartItems, addToCart, removeFromCart, getQt, moveToWishlist }}
+			value={{ cartItems, addToCart, removeFromCart, getQt }}
 		>
 			{children}
 		</CartContext.Provider>

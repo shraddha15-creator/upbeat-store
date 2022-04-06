@@ -16,7 +16,7 @@ const WishlistCard = ({
 			<div className="card-container">
 				<div className="card-img-container">
 					<i className="fas fa-trash-alt  card-close"></i>
-					<img className="img-card" src={img} />
+					<img className="img-card" src={img} alt="wishlist-product" />
 				</div>
 				<div className="card-details-container">
 					<h5 className="card-product-brand">{brand}</h5>

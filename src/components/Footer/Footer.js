@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 export function Footer() {
@@ -7,16 +8,16 @@ export function Footer() {
 			<footer>
 				<div className="footer-container">
 					<div className="footer-left">
-						<a href="">Our Stores</a>
-						<a href="">Career</a>
-						<a href="">Support</a>
-						<a href="">Marketing</a>
+						<Link to="">Our Stores</Link>
+						<Link to="">Career</Link>
+						<Link to="">Support</Link>
+						<Link to="">Marketing</Link>
 					</div>
 					<div className="footer-mid">
-						<a href="">Send Feedback</a>
-						<a href="">Reviews</a>
-						<a href="">Privacy Policy</a>
-						<a href="">Contact Us</a>
+						<Link to="">Send Feedback</Link>
+						<Link to="">Reviews</Link>
+						<Link to="">Privacy Policy</Link>
+						<Link to="">Contact Us</Link>
 					</div>
 					<div className="footer-right">
 						<i className="fa fa-instagram icon-footer"></i>

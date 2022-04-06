@@ -20,7 +20,7 @@ const ProductCard = ({
 		<>
 			<div className="card-container ">
 				<div className="card-img-container">
-					<img className="img-card" src={img} alt="product-image" />
+					<img className="img-card" src={img} alt="product-card" />
 				</div>
 				<div className="card-details-container">
 					<a
