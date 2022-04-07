@@ -7,7 +7,6 @@ export function Filter() {
 			sortBy,
 			categories: { fastDelivery, outOfStock },
 			category,
-			category: { acoustic, electric, hollowbody, classic },
 			priceRange,
 			rating,
 		},
@@ -165,9 +164,7 @@ export function Filter() {
 								type="radio"
 								name="rating"
 								checked={rating === "4"}
-								onChange={() =>
-									dispatch({ type: "RATING", payload: "4" })
-								}
+								onChange={() => dispatch({ type: "RATING", payload: "4" })}
 							/>
 							4 Stars & above
 						</label>
@@ -178,9 +175,7 @@ export function Filter() {
 								type="radio"
 								name="rating"
 								checked={rating === "3"}
-								onChange={() =>
-									dispatch({ type: "RATING", payload: "3" })
-								}
+								onChange={() => dispatch({ type: "RATING", payload: "3" })}
 							/>
 							3 Stars & above
 						</label>
@@ -191,9 +186,7 @@ export function Filter() {
 								type="radio"
 								name="rating"
 								checked={rating === "2"}
-								onChange={() =>
-									dispatch({ type: "RATING", payload: "2" })
-								}
+								onChange={() => dispatch({ type: "RATING", payload: "2" })}
 							/>
 							2 Stars & above
 						</label>
@@ -204,9 +197,7 @@ export function Filter() {
 								type="radio"
 								name="rating"
 								checked={rating === "1"}
-								onChange={() =>
-									dispatch({ type: "RATING", payload: "1" })
-								}
+								onChange={() => dispatch({ type: "RATING", payload: "1" })}
 							/>
 							1 Stars & above
 						</label>
@@ -221,9 +212,7 @@ export function Filter() {
 								value="fastDelivery"
 								id="fastDelivery"
 								checked={fastDelivery}
-								onChange={() =>
-									dispatch({ type: "FAST_DELIVERY" })
-								}
+								onChange={() => dispatch({ type: "FAST_DELIVERY" })}
 							/>
 							Fast Delivery
 						</label>
@@ -235,9 +224,7 @@ export function Filter() {
 								value="outOfStock"
 								id="outOfStock"
 								checked={outOfStock}
-								onChange={() =>
-									dispatch({ type: "OUT_OF_STOCK" })
-								}
+								onChange={() => dispatch({ type: "OUT_OF_STOCK" })}
 							/>
 							Include out of stock
 						</label>

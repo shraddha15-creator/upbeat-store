@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect, createContext, useContext } from "react";
+import { useState, createContext, useContext } from "react";
 
 const WishlistContext = createContext();
 
@@ -16,6 +16,7 @@ const WishlistProvider = ({ children }) => {
 				{ headers: { authorization: encodedToken } }
 			);
 			setWishlistProducts(response.data.wishlist);
+			console.log(response.data.wishlist);
 		} catch (error) {
 			console.error(error);
 		}
@@ -31,17 +32,6 @@ const WishlistProvider = ({ children }) => {
 			console.error("==>while deleting", error);
 		}
 	};
-
-	useEffect(() => {
-		(async function getWishlistProduct() {
-			try {
-				const response = await axios.get("/api/users/wishlist");
-				setWishlistProducts(response.data.wishlist);
-			} catch (error) {
-				console.error(error);
-			}
-		})();
-	}, []);
 
 	return (
 		<WishlistContext.Provider

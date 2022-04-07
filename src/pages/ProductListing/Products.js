@@ -12,6 +12,7 @@ import {
 } from "../../utilities";
 import ProductCard from "../../components/Card/ProductCard";
 import { useWishlist } from "../../context/wishlist-context";
+import { useCart } from "../../context/cart-context";
 
 export function Products() {
 	const [products, setProducts] = useState([]);
@@ -19,6 +20,7 @@ export function Products() {
 		state: { sortBy, categories, category, priceRange, rating },
 	} = useFilter();
 	const { addToWishlist } = useWishlist();
+	const { addToCart } = useCart();
 
 	useEffect(() => {
 		(async () => {
@@ -67,6 +69,7 @@ export function Products() {
 									}) => (
 										<ProductCard
 											key={_id}
+											_id={_id}
 											img={img}
 											brand={brand}
 											title={title}
@@ -82,6 +85,16 @@ export function Products() {
 													OriginalPrice,
 													offerPrice,
 													rating,
+												})
+											}
+											addToCart={() =>
+												addToCart({
+													_id,
+													img,
+													brand,
+													title,
+													OriginalPrice,
+													offerPrice,
 												})
 											}
 										/>

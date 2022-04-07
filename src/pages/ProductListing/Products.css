@@ -149,6 +149,7 @@ body {
 
 .btn-light {
     border-radius: 5px;
+    width: 100%;
 }
 
 .btn-light:hover {

@@ -1,4 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { useCart } from "../../context/cart-context";
+import { useWishlist } from "../../context/wishlist-context";
+import "../../pages/ProductListing/Products.css";
 
 const ProductCard = ({
 	_id,
@@ -10,12 +14,15 @@ const ProductCard = ({
 	offerPrice,
 	rating,
 	addToWishlist,
+	addToCart,
 }) => {
+	const { cartItems } = useCart();
+	const { wishlistProducts } = useWishlist();
 	return (
 		<>
 			<div className="card-container ">
 				<div className="card-img-container">
-					<img className="img-card" src={img} alt="product-image" />
+					<img className="img-card" src={img} alt="product-card" />
 				</div>
 				<div className="card-details-container">
 					<a
@@ -38,10 +45,25 @@ const ProductCard = ({
 						<i class="fa fa-star icon-star-rating"></i>
 					</p>
 				</div>
-				<button className="btn btn-dark">Add to Cart</button>
-				<button className="btn btn-light" onClick={addToWishlist}>
-					Add to Wishlist
-				</button>
+				{cartItems && cartItems.find((e) => e._id === _id) ? (
+					<Link to="/cart">
+						<button className="btn btn-dark">Go to Cart</button>
+					</Link>
+				) : (
+					<button className="btn btn-dark" onClick={addToCart}>
+						Add to Cart
+					</button>
+				)}
+
+				{wishlistProducts && wishlistProducts.find((e) => e._id === _id) ? (
+					<Link to="/wishlist">
+						<button className="btn btn-light"> Go to Wishlist </button>
+					</Link>
+				) : (
+					<button className="btn btn-light" onClick={addToWishlist}>
+						Add to Wishlist
+					</button>
+				)}
 			</div>
 		</>
 	);

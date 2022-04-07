@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { useCart } from "../../context/cart-context";
 
 const WishlistCard = ({
 	key,
@@ -8,27 +10,38 @@ const WishlistCard = ({
 	OriginalPrice,
 	title,
 	offerPrice,
-	rating,
 	removeFromWishlist,
+	addToCart,
 }) => {
+	const { cartItems } = useCart();
 	return (
 		<>
-			<div class="card-container">
-				<div class="card-img-container">
-					<i class="fas fa-trash-alt  card-close"></i>
-					<img class="img-card" src={img} />
+			<div className="card-container">
+				<div className="card-img-container">
+					<i className="fas fa-trash-alt  card-close"></i>
+					<img className="img-card" src={img} alt="wishlist-product" />
 				</div>
-				<div class="card-details-container">
-					<h5 class="card-product-brand">{brand}</h5>
-					<h6 class="card-product-name">{title}</h6>
-					<h6 class="card-product-price">Rs. {OriginalPrice} </h6>
-					<h6 class="card-product-offer">
-						<span class="pro-off">Offer Price:</span>Rs. {offerPrice}
+				<div className="card-details-container">
+					<h5 className="card-product-brand">{brand}</h5>
+					<h6 className="card-product-name">{title}</h6>
+					<h6 className="card-product-price">Rs. {OriginalPrice} </h6>
+					<h6 className="card-product-offer">
+						<span className="pro-off">Offer Price:</span>Rs. {offerPrice}
 					</h6>
 				</div>
-				<button class="btn btn-with-links btn-dark">Add to Cart</button>
+
+				{cartItems && cartItems.find((e) => e._id === _id) ? (
+					<Link to="/cart">
+						<button className="btn btn-dark">Go to Cart</button>
+					</Link>
+				) : (
+					<button className="btn btn-dark" onClick={addToCart}>
+						Add to Cart
+					</button>
+				)}
+
 				<button
-					class="btn btn-secondary"
+					className="btn btn-secondary"
 					onClick={() => removeFromWishlist(_id)}
 				>
 					Remove from Wishlist

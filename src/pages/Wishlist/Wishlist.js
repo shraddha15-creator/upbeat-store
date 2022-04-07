@@ -1,17 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import WishlistCard from "../../components/Card/WishlistCard";
+import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
 import "./wishlist.css";
 
 const Wishlist = () => {
 	const { wishlistProducts, removeFromWishlist } = useWishlist();
+	const { addToCart } = useCart();
 	return (
 		<>
-			<div class="wishlist-product-container">
-				<div class="wishlist-title">
+			<div className="wishlist-product-container">
+				<div className="wishlist-title">
 					My Wishlist
-					<span class="wishlist-total">
+					<span className="wishlist-total">
 						({wishlistProducts.length} Items added)
 					</span>
 				</div>
@@ -29,7 +31,7 @@ const Wishlist = () => {
 				)}
 
 				{/* <!-- Wishlised products --> */}
-				<div class="wishlisted-products">
+				<div className="wishlisted-products">
 					{wishlistProducts &&
 						wishlistProducts.map(
 							({
@@ -50,6 +52,17 @@ const Wishlist = () => {
 									offerPrice={offerPrice}
 									rating={rating}
 									removeFromWishlist={removeFromWishlist}
+									// addToCart={addToCart}
+									addToCart={() =>
+										addToCart({
+											_id,
+											img,
+											brand,
+											title,
+											OriginalPrice,
+											offerPrice,
+										})
+									}
 									_id={_id}
 								/>
 							)

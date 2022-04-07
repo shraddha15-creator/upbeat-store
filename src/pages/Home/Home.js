@@ -58,9 +58,9 @@ export function Home() {
 											alt="guitar-pic"
 											className="brand-logo img-main img-round"
 										/>
-										<a href="">
+										<Link to="/products">
 											<h5 className="guitar-type">{categoryName}</h5>
-										</a>
+										</Link>
 									</div>
 								</Link>
 							);

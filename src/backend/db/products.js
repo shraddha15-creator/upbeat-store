@@ -1,4 +1,28 @@
 import { v4 as uuid } from "uuid";
+// classic
+import img1 from "../../assets/cl_3.jpg";
+import img2 from "../../assets/cl_61.jpg";
+import img3 from "../../assets/cl04.jpg";
+import img4 from "../../assets/cl27.jpg";
+import img5 from "../../assets/cl88.jpg";
+// electric
+import img6 from "../../assets/el_2.jpg";
+import img7 from "../../assets/el_34.jpg";
+import img8 from "../../assets/el_54.jpg";
+import img9 from "../../assets/el_67.jpg";
+import img10 from "../../assets/el_89.jpg";
+import img11 from "../../assets/el01.jpg";
+import img15 from "../../assets/el04.jpg";
+// acoustic
+import img16 from "../../assets/el05.jpg";
+import img17 from "../../assets/el08.jpg";
+import img18 from "../../assets/el09.jpg";
+import img19 from "../../assets/el066.jpg";
+// hollowbody
+import img20 from "../../assets/hlb_4.jpg";
+import img21 from "../../assets/hlb_54.jpg";
+import img22 from "../../assets/hlb04.jpg";
+import img23 from "../../assets/hlb09.jpg";
 
 /**
  * Product Database can be added here.
@@ -13,7 +37,7 @@ export const products = [
 		OriginalPrice: "5999",
 		offerPrice: "4999",
 		categoryName: "acoustic",
-		img: "https://raw.githubusercontent.com/shraddha15-creator/e-commerce/dev/images/ac-one.jpg",
+		img: img19,
 		fastDelivery: true,
 		inStock: true,
 		rating: "4",
@@ -28,7 +52,7 @@ export const products = [
 		OriginalPrice: "4999",
 		offerPrice: "3999",
 		categoryName: "classis",
-		img: "https://raw.githubusercontent.com/shraddha15-creator/e-commerce/dev/images/classic.jpg",
+		img: img5,
 		fastDelivery: true,
 		inStock: true,
 		rating: "4",
@@ -45,7 +69,7 @@ export const products = [
 		categoryName: "electric",
 		img: "https://raw.githubusercontent.com/shraddha15-creator/e-commerce/dev/images/el-four.jpg",
 		fastDelivery: true,
-		inStock: false,
+		inStock: true,
 		rating: "4.1",
 		productDescription:
 			"features a traditional, solid-wood, double-cutaway design in an Orange finish, and a maple neck with jatoba tonewood fretboard — all in an easy-playing size. It’s the perfect first guitar for the beginner, or for the more experienced player who can appreciate its feature-rich appointments.",
@@ -83,6 +107,21 @@ export const products = [
 	},
 	{
 		_id: uuid(),
+		title: "Electric Guitar",
+		brand: "Yamaha",
+		OriginalPrice: "8799",
+		offerPrice: "8299",
+		categoryName: "electric",
+		img: img10,
+		fastDelivery: true,
+		inStock: true,
+		rating: "4.1",
+		productDescription:
+			"features a traditional, solid-wood, double-cutaway design in an Orange finish, and a maple neck with jatoba tonewood fretboard — all in an easy-playing size. It’s the perfect first guitar for the beginner, or for the more experienced player who can appreciate its feature-rich appointments.",
+		isTopProduct: true,
+	},
+	{
+		_id: uuid(),
 		title: "Acoustic Guitar",
 		brand: "Yamaha",
 		OriginalPrice: "8999",
@@ -95,6 +134,21 @@ export const products = [
 		productDescription:
 			"features a traditional, solid-wood, double-cutaway design in an Orange finish, and a maple neck with jatoba tonewood fretboard — all in an easy-playing size. It’s the perfect first guitar for the beginner, or for the more experienced player who can appreciate its feature-rich appointments.",
 		isTopProduct: false,
+	},
+	{
+		_id: uuid(),
+		title: "Electric Guitar",
+		brand: "Guild",
+		OriginalPrice: "7299",
+		offerPrice: "6899",
+		categoryName: "electric",
+		img: img11,
+		fastDelivery: true,
+		inStock: true,
+		rating: "4.1",
+		productDescription:
+			"features a traditional, solid-wood, double-cutaway design in an Orange finish, and a maple neck with jatoba tonewood fretboard — all in an easy-playing size. It’s the perfect first guitar for the beginner, or for the more experienced player who can appreciate its feature-rich appointments.",
+		isTopProduct: true,
 	},
 	{
 		_id: uuid(),
@@ -128,6 +182,21 @@ export const products = [
 	},
 	{
 		_id: uuid(),
+		title: "Electric Guitar",
+		brand: "Gibson",
+		OriginalPrice: "14999",
+		offerPrice: "12899",
+		categoryName: "electric",
+		img: img15,
+		fastDelivery: true,
+		inStock: true,
+		rating: "4.1",
+		productDescription:
+			"features a traditional, solid-wood, double-cutaway design in an Orange finish, and a maple neck with jatoba tonewood fretboard — all in an easy-playing size. It’s the perfect first guitar for the beginner, or for the more experienced player who can appreciate its feature-rich appointments.",
+		isTopProduct: true,
+	},
+	{
+		_id: uuid(),
 		title: "Classic Guitar",
 		brand: "Guild",
 		OriginalPrice: "15999",
@@ -135,7 +204,7 @@ export const products = [
 		categoryName: "classic",
 		img: "https://raw.githubusercontent.com/shraddha15-creator/e-commerce/dev/images/classic.jpg",
 		fastDelivery: true,
-		inStock: true,
+		inStock: false,
 		rating: "3",
 		productDescription:
 			"features a traditional, solid-wood, double-cutaway design in an Orange finish, and a maple neck with jatoba tonewood fretboard — all in an easy-playing size. It’s the perfect first guitar for the beginner, or for the more experienced player who can appreciate its feature-rich appointments.",
@@ -165,8 +234,23 @@ export const products = [
 		categoryName: "electric",
 		img: "https://raw.githubusercontent.com/shraddha15-creator/e-commerce/dev/images/el-two.jpg",
 		fastDelivery: true,
-		inStock: false,
+		inStock: true,
 		rating: "4.4",
+		productDescription:
+			"features a traditional, solid-wood, double-cutaway design in an Orange finish, and a maple neck with jatoba tonewood fretboard — all in an easy-playing size. It’s the perfect first guitar for the beginner, or for the more experienced player who can appreciate its feature-rich appointments.",
+		isTopProduct: true,
+	},
+	{
+		_id: uuid(),
+		title: "Hollowbody Guitar",
+		brand: "Guild",
+		OriginalPrice: "15399",
+		offerPrice: "14899",
+		categoryName: "hollowbody",
+		img: img23,
+		fastDelivery: true,
+		inStock: true,
+		rating: "4.1",
 		productDescription:
 			"features a traditional, solid-wood, double-cutaway design in an Orange finish, and a maple neck with jatoba tonewood fretboard — all in an easy-playing size. It’s the perfect first guitar for the beginner, or for the more experienced player who can appreciate its feature-rich appointments.",
 		isTopProduct: true,
@@ -180,7 +264,217 @@ export const products = [
 		categoryName: "electric",
 		img: "https://raw.githubusercontent.com/shraddha15-creator/e-commerce/dev/images/el-thr.jpg",
 		fastDelivery: true,
+		inStock: true,
+		rating: "4.3",
+		productDescription:
+			"features a traditional, solid-wood, double-cutaway design in an Orange finish, and a maple neck with jatoba tonewood fretboard — all in an easy-playing size. It’s the perfect first guitar for the beginner, or for the more experienced player who can appreciate its feature-rich appointments.",
+		isTopProduct: true,
+	},
+	{
+		_id: uuid(),
+		title: "Classic Guitar",
+		brand: "Seagull",
+		OriginalPrice: "6799",
+		offerPrice: "5499",
+		categoryName: "classic",
+		img: img1,
+		fastDelivery: true,
+		inStock: true,
+		rating: "4",
+		productDescription:
+			"features a traditional, solid-wood, double-cutaway design in an Orange finish, and a maple neck with jatoba tonewood fretboard — all in an easy-playing size. It’s the perfect first guitar for the beginner, or for the more experienced player who can appreciate its feature-rich appointments.",
+		isTopProduct: true,
+	},
+	{
+		_id: uuid(),
+		title: "Electric Guitar",
+		brand: "Washburn",
+		OriginalPrice: "7899",
+		offerPrice: "6799",
+		categoryName: "elctric",
+		img: img6,
+		fastDelivery: true,
+		inStock: true,
+		rating: "4.4",
+		productDescription:
+			"features a traditional, solid-wood, double-cutaway design in an Orange finish, and a maple neck with jatoba tonewood fretboard — all in an easy-playing size. It’s the perfect first guitar for the beginner, or for the more experienced player who can appreciate its feature-rich appointments.",
+		isTopProduct: false,
+	},
+	{
+		_id: uuid(),
+		title: "Hollowbody Guitar",
+		brand: "Guild",
+		OriginalPrice: "12399",
+		offerPrice: "11499",
+		categoryName: "hollowbody",
+		img: img20,
+		fastDelivery: true,
+		inStock: true,
+		rating: "4.1",
+		productDescription:
+			"features a traditional, solid-wood, double-cutaway design in an Orange finish, and a maple neck with jatoba tonewood fretboard — all in an easy-playing size. It’s the perfect first guitar for the beginner, or for the more experienced player who can appreciate its feature-rich appointments.",
+		isTopProduct: true,
+	},
+	{
+		_id: uuid(),
+		title: "Hollowbody Guitar",
+		brand: "Gibson",
+		OriginalPrice: "6399",
+		offerPrice: "6199",
+		categoryName: "hollowbody",
+		img: img21,
+		fastDelivery: true,
+		inStock: true,
+		rating: "4.8",
+		productDescription:
+			"features a traditional, solid-wood, double-cutaway design in an Orange finish, and a maple neck with jatoba tonewood fretboard — all in an easy-playing size. It’s the perfect first guitar for the beginner, or for the more experienced player who can appreciate its feature-rich appointments.",
+		isTopProduct: true,
+	},
+	{
+		_id: uuid(),
+		title: "Classis Guitar",
+		brand: "Washburn",
+		OriginalPrice: "5699",
+		offerPrice: "5499",
+		categoryName: "classic",
+		img: img2,
+		fastDelivery: false,
+		inStock: true,
+		rating: "2.5",
+		productDescription:
+			"features a traditional, solid-wood, double-cutaway design in an Orange finish, and a maple neck with jatoba tonewood fretboard — all in an easy-playing size. It’s the perfect first guitar for the beginner, or for the more experienced player who can appreciate its feature-rich appointments.",
+		isTopProduct: false,
+	},
+	{
+		_id: uuid(),
+		title: "Acoustic Guitar",
+		brand: "Yamaha",
+		OriginalPrice: "9799",
+		offerPrice: "9599",
+		categoryName: "acoustic",
+		img: img16,
+		fastDelivery: false,
 		inStock: false,
+		rating: "3.6",
+		productDescription:
+			"features a traditional, solid-wood, double-cutaway design in an Orange finish, and a maple neck with jatoba tonewood fretboard — all in an easy-playing size. It’s the perfect first guitar for the beginner, or for the more experienced player who can appreciate its feature-rich appointments.",
+		isTopProduct: false,
+	},
+	{
+		_id: uuid(),
+		title: "Acoustic Guitar",
+		brand: "Ovation",
+		OriginalPrice: "7899",
+		offerPrice: "6999",
+		categoryName: "acoustic",
+		img: img17,
+		fastDelivery: true,
+		inStock: true,
+		rating: "4.2",
+		productDescription:
+			"features a traditional, solid-wood, double-cutaway design in an Orange finish, and a maple neck with jatoba tonewood fretboard — all in an easy-playing size. It’s the perfect first guitar for the beginner, or for the more experienced player who can appreciate its feature-rich appointments.",
+		isTopProduct: false,
+	},
+	{
+		_id: uuid(),
+		title: "Hollowbody Guitar",
+		brand: "Seagull",
+		OriginalPrice: "11999",
+		offerPrice: "10799",
+		categoryName: "hollowbody",
+		img: img22,
+		fastDelivery: false,
+		inStock: true,
+		rating: "4.5",
+		productDescription:
+			"features a traditional, solid-wood, double-cutaway design in an Orange finish, and a maple neck with jatoba tonewood fretboard — all in an easy-playing size. It’s the perfect first guitar for the beginner, or for the more experienced player who can appreciate its feature-rich appointments.",
+		isTopProduct: true,
+	},
+	{
+		_id: uuid(),
+		title: "Classic Guitar",
+		brand: "Guild",
+		OriginalPrice: "13999",
+		offerPrice: "12899",
+		categoryName: "classic",
+		img: img3,
+		fastDelivery: true,
+		inStock: false,
+		rating: "3",
+		productDescription:
+			"features a traditional, solid-wood, double-cutaway design in an Orange finish, and a maple neck with jatoba tonewood fretboard — all in an easy-playing size. It’s the perfect first guitar for the beginner, or for the more experienced player who can appreciate its feature-rich appointments.",
+		isTopProduct: false,
+	},
+	{
+		_id: uuid(),
+		title: "Electric Guitar",
+		brand: "Gibson",
+		OriginalPrice: "8899",
+		offerPrice: "7899",
+		categoryName: "electric",
+		img: img7,
+		fastDelivery: false,
+		inStock: true,
+		rating: "4",
+		productDescription:
+			"features a traditional, solid-wood, double-cutaway design in an Orange finish, and a maple neck with jatoba tonewood fretboard — all in an easy-playing size. It’s the perfect first guitar for the beginner, or for the more experienced player who can appreciate its feature-rich appointments.",
+		isTopProduct: false,
+	},
+	{
+		_id: uuid(),
+		title: "Classis Guitar",
+		brand: "Washburn",
+		OriginalPrice: "5699",
+		offerPrice: "5499",
+		categoryName: "classic",
+		img: img4,
+		fastDelivery: false,
+		inStock: true,
+		rating: "2.5",
+		productDescription:
+			"features a traditional, solid-wood, double-cutaway design in an Orange finish, and a maple neck with jatoba tonewood fretboard — all in an easy-playing size. It’s the perfect first guitar for the beginner, or for the more experienced player who can appreciate its feature-rich appointments.",
+		isTopProduct: false,
+	},
+	{
+		_id: uuid(),
+		title: "Acoustic Guitar",
+		brand: "Yamaha",
+		OriginalPrice: "9799",
+		offerPrice: "9599",
+		categoryName: "acoustic",
+		img: img18,
+		fastDelivery: false,
+		inStock: false,
+		rating: "3.6",
+		productDescription:
+			"features a traditional, solid-wood, double-cutaway design in an Orange finish, and a maple neck with jatoba tonewood fretboard — all in an easy-playing size. It’s the perfect first guitar for the beginner, or for the more experienced player who can appreciate its feature-rich appointments.",
+		isTopProduct: false,
+	},
+	{
+		_id: uuid(),
+		title: "Electric Guitar",
+		brand: "Yamaha",
+		OriginalPrice: "15999",
+		offerPrice: "13999",
+		categoryName: "electric",
+		img: img8,
+		fastDelivery: true,
+		inStock: true,
+		rating: "4.4",
+		productDescription:
+			"features a traditional, solid-wood, double-cutaway design in an Orange finish, and a maple neck with jatoba tonewood fretboard — all in an easy-playing size. It’s the perfect first guitar for the beginner, or for the more experienced player who can appreciate its feature-rich appointments.",
+		isTopProduct: true,
+	},
+	{
+		_id: uuid(),
+		title: "Electric Guitar",
+		brand: "Gibson",
+		OriginalPrice: "14999",
+		offerPrice: "12999",
+		categoryName: "electric",
+		img: img9,
+		fastDelivery: true,
+		inStock: true,
 		rating: "4.3",
 		productDescription:
 			"features a traditional, solid-wood, double-cutaway design in an Orange finish, and a maple neck with jatoba tonewood fretboard — all in an easy-playing size. It’s the perfect first guitar for the beginner, or for the more experienced player who can appreciate its feature-rich appointments.",

@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import Login from "./pages/Auth/Login";
 import Signup from "./pages/Auth/Signup";
 import Wishlist from "./pages/Wishlist/Wishlist";
+import Cart from "./pages/Cart/Cart";
 
 function App() {
 	return (
@@ -20,6 +21,7 @@ function App() {
 					<Route path="/login" element={<Login />} />
 					<Route path="/signup" element={<Signup />} />
 					<Route path="/wishlist" element={<Wishlist />} />
+					<Route path="/cart" element={<Cart />} />
 				</Routes>
 				<Footer />
 			</BrowserRouter>

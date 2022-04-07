@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
 import "./style.css";
 
 export function Navbar() {
 	const { wishlistProducts } = useWishlist();
+	const { cartItems } = useCart();
 	return (
 		<>
 			<div className="navigation-container">
@@ -27,7 +29,9 @@ export function Navbar() {
 							<Link to="/cart">
 								<i className="fa fa-cart-plus icon"></i>
 								<div className="icon-badge">
-									<span className="badge-nums">1</span>
+									<span className="badge-nums">
+										{cartItems && cartItems.length > 0 ? cartItems.length : 0}
+									</span>
 								</div>
 							</Link>
 						</div>
