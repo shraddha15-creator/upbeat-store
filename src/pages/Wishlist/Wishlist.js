@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useCart, useWishlist } from "../../context";
 import WishlistCard from "../../components/Card/WishlistCard";
-import { useCart } from "../../context/cart-context";
-import { useWishlist } from "../../context/wishlist-context";
 import "./wishlist.css";
 
 const Wishlist = () => {
@@ -52,7 +51,6 @@ const Wishlist = () => {
 									offerPrice={offerPrice}
 									rating={rating}
 									removeFromWishlist={removeFromWishlist}
-									// addToCart={addToCart}
 									addToCart={() =>
 										addToCart({
 											_id,
