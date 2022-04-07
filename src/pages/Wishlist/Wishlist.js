@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import WishlistCard from "../../components/Card/WishlistCard";
+import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
 import "./wishlist.css";
 
 const Wishlist = () => {
 	const { wishlistProducts, removeFromWishlist } = useWishlist();
+	const { addToCart } = useCart();
 	return (
 		<>
 			<div className="wishlist-product-container">
@@ -50,6 +52,17 @@ const Wishlist = () => {
 									offerPrice={offerPrice}
 									rating={rating}
 									removeFromWishlist={removeFromWishlist}
+									// addToCart={addToCart}
+									addToCart={() =>
+										addToCart({
+											_id,
+											img,
+											brand,
+											title,
+											OriginalPrice,
+											offerPrice,
+										})
+									}
 									_id={_id}
 								/>
 							)

@@ -5,7 +5,6 @@ const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
 	const [cartItems, setCartItems] = useState();
-	// const { setWishlistProducts } = useWishlist();
 
 	const encodedToken =
 		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI4NDA1MjA4MS1hNjAwLTQ2YmQtYTNhZS0yZDljNTU2YTQ0NzgiLCJlbWFpbCI6ImFkYXJzaGJhbGlrYUBnbWFpbC5jb20ifQ.gaqvCVkY0hv54te82TnyI8W3iLXNbRScUytBNaTE3GM";
@@ -36,20 +35,6 @@ const CartProvider = ({ children }) => {
 		}
 	};
 
-	// const moveToWishlist = async (product) => {
-	// 	try {
-	// 		const response = await axios.post(
-	// 			`/api/user/wishlist`,
-	// 			{ products: product },
-	// 			{ headers: { authorization: encodedToken } }
-	// 		);
-	// 		setWishlistProducts(response.data.wishlist);
-	// 		removeFromCart(product._id);
-	// 	} catch (error) {
-	// 		console.error("WHILE");
-	// 	}
-	// };
-
 	const getQt = async (productId, btnType) => {
 		try {
 			const response = await axios.post(
@@ -65,7 +50,12 @@ const CartProvider = ({ children }) => {
 					},
 				}
 			);
-			setCartItems(response.data.cart);
+			const currItem = response.data.cart.find((e) => e._id === productId);
+			if (currItem.qty < 1) {
+				removeFromCart(productId);
+			} else {
+				setCartItems(response.data.cart);
+			}
 		} catch (error) {
 			console.error("WHILE GET quantity", error);
 		}

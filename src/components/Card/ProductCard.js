@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../../context/cart-context";
+import { useWishlist } from "../../context/wishlist-context";
 import "../../pages/ProductListing/Products.css";
 
 const ProductCard = ({
@@ -16,6 +17,7 @@ const ProductCard = ({
 	addToCart,
 }) => {
 	const { cartItems } = useCart();
+	const { wishlistProducts } = useWishlist();
 	return (
 		<>
 			<div className="card-container ">
@@ -53,9 +55,15 @@ const ProductCard = ({
 					</button>
 				)}
 
-				<button className="btn btn-light" onClick={addToWishlist}>
-					Add to Wishlist
-				</button>
+				{wishlistProducts && wishlistProducts.find((e) => e._id === _id) ? (
+					<Link to="/wishlist">
+						<button className="btn btn-light"> Go to Wishlist </button>
+					</Link>
+				) : (
+					<button className="btn btn-light" onClick={addToWishlist}>
+						Add to Wishlist
+					</button>
+				)}
 			</div>
 		</>
 	);

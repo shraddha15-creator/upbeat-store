@@ -16,6 +16,7 @@ const WishlistProvider = ({ children }) => {
 				{ headers: { authorization: encodedToken } }
 			);
 			setWishlistProducts(response.data.wishlist);
+			console.log(response.data.wishlist);
 		} catch (error) {
 			console.error(error);
 		}

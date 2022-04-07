@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { useCart } from "../../context/cart-context";
 
 const WishlistCard = ({
 	key,
@@ -8,9 +10,10 @@ const WishlistCard = ({
 	OriginalPrice,
 	title,
 	offerPrice,
-	rating,
 	removeFromWishlist,
+	addToCart,
 }) => {
+	const { cartItems } = useCart();
 	return (
 		<>
 			<div className="card-container">
@@ -26,7 +29,17 @@ const WishlistCard = ({
 						<span className="pro-off">Offer Price:</span>Rs. {offerPrice}
 					</h6>
 				</div>
-				<button className="btn btn-with-links btn-dark">Add to Cart</button>
+
+				{cartItems && cartItems.find((e) => e._id === _id) ? (
+					<Link to="/cart">
+						<button className="btn btn-dark">Go to Cart</button>
+					</Link>
+				) : (
+					<button className="btn btn-dark" onClick={addToCart}>
+						Add to Cart
+					</button>
+				)}
+
 				<button
 					className="btn btn-secondary"
 					onClick={() => removeFromWishlist(_id)}
