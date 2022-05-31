@@ -52,6 +52,11 @@ input:focus {
     width: 1px;
 }
 
+.login-btn {
+    border: 1px solid var(--white);
+    width: 10%;
+}
+
 /* Media queries */
 @media only screen and (max-width: 1200px) {
     .nav-brand a {

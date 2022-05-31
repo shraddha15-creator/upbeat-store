@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
 
@@ -6,6 +7,7 @@ const CartCard = ({ product }) => {
 	const { _id, img, brand, title, OriginalPrice, offerPrice, qty } = product;
 	const { addToWishlist } = useWishlist();
 	const { removeFromCart, getQt } = useCart();
+	const { wishlistProducts } = useWishlist();
 	return (
 		<>
 			<div className="card-horizontal">
@@ -54,7 +56,11 @@ const CartCard = ({ product }) => {
 							})
 						}
 					>
-						Add to Wishlist
+						{wishlistProducts && wishlistProducts.find((e) => e._id === _id) ? (
+							<Link to="/wishlist">Go to Wishlist</Link>
+						) : (
+							"Add to Wishlist"
+						)}
 					</button>
 				</div>
 			</div>

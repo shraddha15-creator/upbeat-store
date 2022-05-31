@@ -8,6 +8,7 @@ import Login from "./pages/Auth/Login";
 import Signup from "./pages/Auth/Signup";
 import Wishlist from "./pages/Wishlist/Wishlist";
 import Cart from "./pages/Cart/Cart";
+import PrivateRoute from "./utilities/PrivateRoute";
 
 function App() {
 	return (
@@ -20,8 +21,23 @@ function App() {
 					<Route path="/products" element={<Products />} />
 					<Route path="/login" element={<Login />} />
 					<Route path="/signup" element={<Signup />} />
-					<Route path="/wishlist" element={<Wishlist />} />
-					<Route path="/cart" element={<Cart />} />
+					{/* private route */}
+					<Route
+						path="/wishlist"
+						element={
+							<PrivateRoute>
+								<Wishlist />
+							</PrivateRoute>
+						}
+					/>
+					<Route
+						path="/cart"
+						element={
+							<PrivateRoute>
+								<Cart />
+							</PrivateRoute>
+						}
+					/>
 				</Routes>
 				<Footer />
 			</BrowserRouter>

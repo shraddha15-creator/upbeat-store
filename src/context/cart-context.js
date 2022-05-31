@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useState, createContext, useContext } from "react";
+import { token } from "../utilities/token";
+
+const encodedToken = token();
 
 const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
 	const [cartItems, setCartItems] = useState();
-
-	const encodedToken =
-		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI4NDA1MjA4MS1hNjAwLTQ2YmQtYTNhZS0yZDljNTU2YTQ0NzgiLCJlbWFpbCI6ImFkYXJzaGJhbGlrYUBnbWFpbC5jb20ifQ.gaqvCVkY0hv54te82TnyI8W3iLXNbRScUytBNaTE3GM";
 
 	const addToCart = async (product) => {
 		try {
