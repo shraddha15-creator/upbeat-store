@@ -43,6 +43,7 @@ export function Home() {
 						guitarCategories.map(({ id, img, categoryName }) => {
 							return (
 								<Link
+									key={id}
 									to="/products"
 									onClick={() => {
 										dispatch({ type: "CATEGORY", payload: categoryName });

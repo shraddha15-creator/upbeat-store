@@ -1,6 +1,5 @@
 .signup-container {
     display: flex;
-    height: 80vh;
     justify-content: center;
     align-items: center;
     margin: 1rem 0;
@@ -15,7 +14,6 @@
     background-color: var(--white);
     padding: 1rem;
     border: 1px solid var(--black);
-
 }
 
 .signup-form-heading {
@@ -35,17 +33,17 @@
 
 .signup-form-inputs {
     padding: 0;
-    width: 88%;
 }
 
 .signup-form-inputs input {
     padding: 0.7rem 1rem;
-    width: 100%;
+    width: 85%;
     outline: none;
-    border: 1.5px solid var(--black);
+    border: none;
+    background-color: rgb(243, 243, 243);
     border-radius: 3px;
     transition: border .3s ease;
-    margin-bottom: 1rem;
+    margin: .3rem;
 }
 
 .action-btn {
@@ -71,4 +69,8 @@
     background: var(--white);
     color: var(--black);
     border: 2px solid var(--black);
+}
+
+legend {
+    font-size: 0.8rem;
 }

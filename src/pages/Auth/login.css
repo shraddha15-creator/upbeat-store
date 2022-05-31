@@ -11,7 +11,6 @@
     width: 380px;
     max-width: 90%;
     border-radius: 3px;
-    /* background-color: var(--primary-light); */
     background-color: var(--white);
     padding: 1rem;
     border: 1px solid var(--black);
@@ -34,18 +33,19 @@
 }
 
 .login-form-inputs {
-    width: 88%;
-    padding: 0;
+    margin-bottom: 1rem;
 }
 
 .login-form-inputs input {
-    padding: 0.7rem 1rem;
-    width: 100%;
+    padding: 0.2rem 0.4rem;
+    width: 85%;
     outline: none;
-    border: 1.5px solid var(--black);
+    border: none;
     border-radius: 3px;
     transition: border .3s ease;
     margin-bottom: 1rem;
+    background-color: rgb(243, 243, 243);
+
 }
 
 .action-btn {
@@ -58,11 +58,9 @@
     font-weight: 600;
     background: var(--black);
     color: var(--white);
-    min-width: 100%;
-    width: max-content;
-    padding: 0.8rem 1rem;
-    border-radius: 3px;
-    border: 2px solid var(--black);
+    width: 10vw;
+    border: 2px solid var(--white);
+    border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
@@ -71,4 +69,8 @@
     background: var(--white);
     color: var(--black);
     border: 2px solid var(--black);
+}
+
+.login-page-btn {
+    padding: 0.5rem 1rem;
 }

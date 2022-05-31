@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/auth-context";
 import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
 import "../../pages/ProductListing/Products.css";
@@ -16,8 +17,10 @@ const ProductCard = ({
 	addToWishlist,
 	addToCart,
 }) => {
+	const navigate = useNavigate();
 	const { cartItems } = useCart();
 	const { wishlistProducts } = useWishlist();
+	const { user } = useAuth();
 	return (
 		<>
 			<div className="card-container ">
@@ -37,7 +40,7 @@ const ProductCard = ({
 					</h6>
 					<p className="product-ratings">
 						{rating}
-						<i class="fa fa-star icon-star-rating"></i>
+						<i className="fa fa-star icon-star-rating"></i>
 					</p>
 				</div>
 				{cartItems && cartItems.find((e) => e._id === _id) ? (
@@ -45,7 +48,13 @@ const ProductCard = ({
 						<button className="btn btn-dark">Go to Cart</button>
 					</Link>
 				) : (
-					<button className="btn btn-dark" onClick={addToCart}>
+					<button
+						className="btn btn-dark"
+						// onClick={addToCart}
+						onClick={() => {
+							user.token ? addToCart() : navigate("/login");
+						}}
+					>
 						Add to Cart
 					</button>
 				)}
@@ -55,7 +64,12 @@ const ProductCard = ({
 						<button className="btn btn-light"> Go to Wishlist </button>
 					</Link>
 				) : (
-					<button className="btn btn-light" onClick={addToWishlist}>
+					<button
+						className="btn btn-light"
+						onClick={() => {
+							user.token ? addToWishlist() : navigate("/login");
+						}}
+					>
 						Add to Wishlist
 					</button>
 				)}

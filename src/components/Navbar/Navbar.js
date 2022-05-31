@@ -1,12 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/auth-context";
 import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
 import "./style.css";
 
 export function Navbar() {
+	const navigate = useNavigate();
 	const { wishlistProducts } = useWishlist();
 	const { cartItems } = useCart();
+	const { user, setUser } = useAuth();
+
+	const logoutHandler = () => {
+		localStorage.removeItem("token");
+		localStorage.removeItem("userDetails");
+		setUser({ token: "", userDetails: "", isLoggedIn: false });
+		navigate("/");
+	};
+
 	return (
 		<>
 			<div className="navigation-container">
@@ -46,11 +57,18 @@ export function Navbar() {
 							</Link>
 						</div>
 					</div>
-					<a href="./screens/login/login.html" className="links">
-						<Link to="/login ">
+					{user && user.isLoggedIn ? (
+						<button
+							className="btn btn-primary login-btn"
+							onClick={logoutHandler}
+						>
+							Logout
+						</button>
+					) : (
+						<Link to="/login" className="elp-items">
 							<button className="btn btn-primary login-btn">Login</button>
 						</Link>
-					</a>
+					)}
 				</div>
 			</div>
 		</>
