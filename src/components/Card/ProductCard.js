@@ -25,12 +25,7 @@ const ProductCard = ({
 					<img className="img-card" src={img} alt="product-card" />
 				</div>
 				<div className="card-details-container">
-					<a
-						href="../single-product/single.html"
-						className="card-product-brand"
-					>
-						{brand}
-					</a>
+					<div className="card-product-brand">{brand}</div>
 					<h6 className="card-product-name">{title}</h6>
 					<h6 className="card-product-price">
 						Rs.

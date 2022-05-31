@@ -1,21 +1,3 @@
-.shop-now-btn {
-    background-color: var(--black);
-}
-
-.shop-now-btn a {
-    color: var(--white);
-}
-
-.shop-now-btn:hover {
-    color: var(--black);
-    border: 2px solid var(--black);
-    background-color: var(--white);
-}
-
-.shop-now-btn a:hover {
-    color: var(--black);
-}
-
 .section-name {
     color: var(--black);
     padding: 1rem 0 0 2rem;

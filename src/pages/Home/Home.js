@@ -30,13 +30,9 @@ export function Home() {
 						<div className="content-heading">
 							Start Your Musical Journey With Upbeat!
 						</div>
-						<a href="./screens/products-list/products.html" className="links">
-							<Link to="/products">
-								<button className="shop-now-btn btn btn-primary btn-dark">
-									Shop Now
-								</button>
-							</Link>
-						</a>
+						<Link to="/products">
+							<button className="btn btn-primary">Shop Now</button>
+						</Link>
 					</div>
 				</div>
 
