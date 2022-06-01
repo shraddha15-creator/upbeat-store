@@ -9,6 +9,7 @@ import Signup from "./pages/Auth/Signup";
 import Wishlist from "./pages/Wishlist/Wishlist";
 import Cart from "./pages/Cart/Cart";
 import PrivateRoute from "./utilities/PrivateRoute";
+import Page404 from "./pages/404page/Page404";
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 			<BrowserRouter>
 				<Navbar />
 				<Routes>
+					<Route path="*" element={<Page404 />} />
 					<Route path="/mockman" element={<Mockman />} />
 					<Route path="/" element={<Home />} />
 					<Route path="/products" element={<Products />} />
