@@ -7,7 +7,6 @@ import "../../pages/ProductListing/Products.css";
 
 const ProductCard = ({
 	_id,
-	key,
 	img,
 	brand,
 	OriginalPrice,
@@ -52,7 +51,7 @@ const ProductCard = ({
 						className="btn btn-dark"
 						// onClick={addToCart}
 						onClick={() => {
-							user.token ? addToCart() : navigate("/login");
+							user.isLoggedIn ? addToCart() : navigate("/login");
 						}}
 					>
 						Add to Cart

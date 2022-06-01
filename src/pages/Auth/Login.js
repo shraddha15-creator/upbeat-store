@@ -105,9 +105,9 @@ const Login = () => {
 					<div className="login-form-subheading">
 						Don't have an account?{" "}
 						<Link to="/signup">
-							<a href="../signup/signup.html">
+							<span>
 								<u>Sign up</u>
-							</a>
+							</span>
 						</Link>
 					</div>
 				</form>

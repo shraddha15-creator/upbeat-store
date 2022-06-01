@@ -17,7 +17,7 @@ const Cart = () => {
 							{cartItems.map((cartItem) => {
 								return (
 									<CartCard
-										key={cartItem.id}
+										key={cartItem._id}
 										product={cartItem}
 										addToWishlist={addToWishlist}
 									/>

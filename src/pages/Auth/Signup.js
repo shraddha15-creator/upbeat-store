@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/auth-context";
 import "./signup.css";
 
@@ -146,9 +146,11 @@ const Signup = () => {
 					</div>
 					<div className="signup-form-subheading">
 						Already have an account?{" "}
-						<a href="../login/login.html">
-							<u>Login</u>
-						</a>
+						<Link to="/login">
+							<span>
+								<u>Login</u>
+							</span>
+						</Link>
 					</div>
 				</form>
 			</div>
