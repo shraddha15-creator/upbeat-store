@@ -28,54 +28,61 @@ const ProductCard = ({
 					!inStock ? "out-of-stock-container" : "card-container"
 				}`}
 			>
-				<div className="card-img-container">
-					<img className="img-card" src={img} alt="product-card" />
-				</div>
-				<div className="card-details-container">
-					<div className="card-product-brand">{brand}</div>
-					<h6 className="card-product-name">{title}</h6>
-					<h6 className="card-product-price">
-						Rs.
-						{OriginalPrice}
-					</h6>
-					<h6 className="card-product-offer">
-						<span className="pro-off">Offer Price:</span>
-						Rs. {offerPrice}
-					</h6>
-					<p className="product-ratings">
-						{rating}
-						<i className="fa fa-star icon-star-rating"></i>
-					</p>
-				</div>
-				{cartItems && cartItems.find((e) => e._id === _id) ? (
-					<Link to="/cart">
-						<button className="btn btn-dark">Go to Cart</button>
-					</Link>
-				) : (
-					<button
-						className="btn btn-dark"
-						onClick={() => {
-							user.isLoggedIn ? addToCart() : navigate("/login");
-						}}
-					>
-						Add to Cart
-					</button>
-				)}
+				<Link to={`/product/${_id}`}>
+					<div className="card-img-container">
+						<img
+							className="img-card"
+							src={img}
+							alt="product-card"
+							// onClick={() => navigate(`/product/${_id}`)}
+						/>
+					</div>
+					<div className="card-details-container">
+						<div className="card-product-brand">{brand}</div>
+						<h6 className="card-product-name">{title}</h6>
+						<h6 className="card-product-price">
+							Rs.
+							{OriginalPrice}
+						</h6>
+						<h6 className="card-product-offer">
+							<span className="pro-off">Offer Price:</span>
+							Rs. {offerPrice}
+						</h6>
+						<p className="product-ratings">
+							{rating}
+							<i className="fa fa-star icon-star-rating"></i>
+						</p>
+					</div>
+					{cartItems && cartItems.find((e) => e._id === _id) ? (
+						<Link to="/cart">
+							<button className="btn btn-dark">Go to Cart</button>
+						</Link>
+					) : (
+						<button
+							className="btn btn-dark"
+							onClick={() => {
+								user.isLoggedIn ? addToCart() : navigate("/login");
+							}}
+						>
+							Add to Cart
+						</button>
+					)}
 
-				{wishlistProducts && wishlistProducts.find((e) => e._id === _id) ? (
-					<Link to="/wishlist">
-						<button className="btn btn-light"> Go to Wishlist </button>
-					</Link>
-				) : (
-					<button
-						className="btn btn-light"
-						onClick={() => {
-							user.token ? addToWishlist() : navigate("/login");
-						}}
-					>
-						Add to Wishlist
-					</button>
-				)}
+					{wishlistProducts && wishlistProducts.find((e) => e._id === _id) ? (
+						<Link to="/wishlist">
+							<button className="btn btn-light"> Go to Wishlist </button>
+						</Link>
+					) : (
+						<button
+							className="btn btn-light"
+							onClick={() => {
+								user.token ? addToWishlist() : navigate("/login");
+							}}
+						>
+							Add to Wishlist
+						</button>
+					)}
+				</Link>
 			</div>
 		</>
 	);

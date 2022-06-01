@@ -8,10 +8,18 @@ export function Home() {
 	const [guitarCategories, setGuitarCategories] = useState();
 	const { dispatch } = useFilter();
 
+	const getCategories = async () => {
+		try {
+			const response = await axios.get("/api/categories");
+			setGuitarCategories(response.data.categories);
+			console.log(response);
+		} catch (error) {
+			console.error(error);
+		}
+	};
+
 	useEffect(() => {
-		axios
-			.get("/api/categories")
-			.then((res) => setGuitarCategories(res.data.categories));
+		getCategories();
 	}, []);
 
 	return (

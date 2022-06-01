@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 import { Filter } from "../../components/index";
 import {
@@ -11,14 +11,15 @@ import {
 import { useFilter, useWishlist, useCart } from "../../context";
 import ProductCard from "../../components/Card/ProductCard";
 import "./Products.css";
+import { useProducts } from "../../context/product-context";
 
 export function Products() {
+	const { products, setProducts } = useProducts();
 	const { addToWishlist } = useWishlist();
 	const { addToCart } = useCart();
 	const {
 		state: { sortBy, categories, category, priceRange, rating },
 	} = useFilter();
-	const [products, setProducts] = useState([]);
 
 	useEffect(() => {
 		(async () => {

@@ -10,6 +10,7 @@ import Wishlist from "./pages/Wishlist/Wishlist";
 import Cart from "./pages/Cart/Cart";
 import PrivateRoute from "./utilities/PrivateRoute";
 import Page404 from "./pages/404page/Page404";
+import SingleProduct from "./pages/SingleProduct/SingleProduct";
 
 function App() {
 	return (
@@ -21,6 +22,7 @@ function App() {
 					<Route path="/mockman" element={<Mockman />} />
 					<Route path="/" element={<Home />} />
 					<Route path="/products" element={<Products />} />
+					<Route path="/product/:productId" element={<SingleProduct />} />
 					<Route path="/login" element={<Login />} />
 					<Route path="/signup" element={<Signup />} />
 					{/* private route */}

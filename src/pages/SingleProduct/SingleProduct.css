@@ -1,0 +1,121 @@
+.single-product-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  border: 1px solid var(--black);
+  border-radius: 5px;
+  margin: 2rem;
+
+}
+
+.single-product-img {
+  width: 40vw;
+}
+
+.single-product-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  width: 45vw;
+  padding: 1rem 4rem;
+}
+
+.single-product-status {
+  background: var(--product-brand);
+  padding: .5rem .7rem;
+  border: 1px solid var(--black);
+}
+
+.single-product-id {
+  font-size: .8rem;
+}
+
+.single-product-ratings {
+  font-weight: 500;
+}
+
+.single-product-price {
+  font-weight: 600;
+}
+
+.single-product-quantity {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: .5rem;
+  border: 1px solid var(--black);
+  border-radius: 5px;
+  font-size: 1.5rem;
+  background-color: var(--white);
+}
+
+.product-qnt-btn {
+  padding: .4rem;
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Descirption */
+.product-description-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem;
+  padding: 1rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+}
+
+.prod-description {
+  width: 55vw;
+  padding-right: 5rem;
+  border-right: 1px solid var(--primary-color);
+}
+
+.prod-feature {
+  display: flex;
+  align-items: center;
+  line-height: 2rem;
+}
+
+.no-product-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: 65vh; */
+}
+
+.go-back-btn {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+/* Media queries */
+@media only screen and (max-width: 1200px) {
+  .single-product-container {
+    flex-direction: column;
+  }
+
+  .single-product-img {
+    width: 70vw;
+  }
+
+  .single-product-details {
+    width: 70vw;
+  }
+
+  .product-description-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .prod-description {
+    border-right: none;
+  }
+}
