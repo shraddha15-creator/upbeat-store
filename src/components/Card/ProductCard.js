@@ -49,7 +49,6 @@ const ProductCard = ({
 				) : (
 					<button
 						className="btn btn-dark"
-						// onClick={addToCart}
 						onClick={() => {
 							user.isLoggedIn ? addToCart() : navigate("/login");
 						}}
