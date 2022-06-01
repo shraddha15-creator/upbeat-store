@@ -50,7 +50,7 @@ const Signup = () => {
 		<>
 			<div className="signup-container">
 				<form className="signup-form" onSubmit={submitHandler}>
-					<div className="signup-form-heading">SIGN UP</div>
+					<div className="signup-form-heading">Sign up to Upbeat 🔐</div>
 					<div className="signup-form-subheading">
 						Please enter your details.
 					</div>
