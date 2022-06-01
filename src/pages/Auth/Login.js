@@ -47,7 +47,7 @@ const Login = () => {
 						loginHandler(e, userLoginData.email, userLoginData.password)
 					}
 				>
-					<div className="login-form-heading">LOGIN</div>
+					<div className="login-form-heading">LOGIN 🔐</div>
 					<div className="login-form-subheading">
 						Please enter your login details.
 					</div>
