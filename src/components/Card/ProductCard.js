@@ -13,6 +13,7 @@ const ProductCard = ({
 	title,
 	offerPrice,
 	rating,
+	inStock,
 	addToWishlist,
 	addToCart,
 }) => {
@@ -22,7 +23,11 @@ const ProductCard = ({
 	const { user } = useAuth();
 	return (
 		<>
-			<div className="card-container ">
+			<div
+				className={`card-container ${
+					!inStock ? "out-of-stock-container" : "card-container"
+				}`}
+			>
 				<div className="card-img-container">
 					<img className="img-card" src={img} alt="product-card" />
 				</div>
