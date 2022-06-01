@@ -64,6 +64,7 @@ export function Products() {
 										OriginalPrice,
 										offerPrice,
 										rating,
+										inStock,
 									}) => (
 										<ProductCard
 											key={_id}
@@ -74,6 +75,7 @@ export function Products() {
 											OriginalPrice={OriginalPrice}
 											offerPrice={offerPrice}
 											rating={rating}
+											inStock={inStock}
 											addToWishlist={() =>
 												addToWishlist({
 													_id,

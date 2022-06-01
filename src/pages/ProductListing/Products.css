@@ -118,6 +118,24 @@ body {
     padding: 0.4rem;
 }
 
+.out-of-stock-container::after {
+    cursor: not-allowed;
+    content: 'Out of stock';
+    position: absolute;
+    z-index: 1;
+    width: 65.90%;
+    height: 96%;
+    top: 0;
+    left: 0.1rem;
+    padding: 0.5rem 2rem;
+    background: rgba(32, 32, 32, 0.338);
+    background: linear-gradient(0deg, rgba(32, 32, 32, 0.655) 0%, rgba(255, 255, 255, 0.452) 100%);
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 .slider-ranges-values {
     display: flex;
     justify-content: space-between;
