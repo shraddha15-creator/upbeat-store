@@ -1,10 +1,10 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useProducts } from "../../context/product-context";
-import Page404 from "../404page/Page404";
+import { Page404 } from "../404page/Page404";
 import "./SingleProduct.css";
 
-const SingleProduct = () => {
+export const SingleProduct = () => {
 	const { productId } = useParams();
 	const { products } = useProducts();
 
@@ -86,5 +86,3 @@ const SingleProduct = () => {
 		</>
 	);
 };
-
-export default SingleProduct;

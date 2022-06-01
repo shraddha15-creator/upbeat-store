@@ -1,16 +1,18 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Mockman from "mockman-js";
-import "./App.css";
+import PrivateRoute from "./utilities/PrivateRoute";
 import { Navbar, Footer } from "./components/index";
-import { Home, Products } from "./pages/index";
-import { BrowserRouter } from "react-router-dom";
 import Login from "./pages/Auth/Login";
 import Signup from "./pages/Auth/Signup";
-import Wishlist from "./pages/Wishlist/Wishlist";
-import Cart from "./pages/Cart/Cart";
-import PrivateRoute from "./utilities/PrivateRoute";
-import Page404 from "./pages/404page/Page404";
-import SingleProduct from "./pages/SingleProduct/SingleProduct";
+import "./App.css";
+import {
+	Home,
+	Products,
+	Page404,
+	Cart,
+	SingleProduct,
+	Wishlist,
+} from "./pages";
 
 function App() {
 	return (

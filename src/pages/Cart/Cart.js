@@ -5,7 +5,7 @@ import CartCard from "../../components/Card/CartCard";
 import PriceDetailsCard from "../../components/Card/PriceDetailsCard";
 import "./cart.css";
 
-const Cart = () => {
+export const Cart = () => {
 	const { cartItems } = useCart();
 	const { addToWishlist } = useWishlist();
 	return (
@@ -51,5 +51,3 @@ const Cart = () => {
 		</>
 	);
 };
-
-export default Cart;

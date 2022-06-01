@@ -4,7 +4,7 @@ import { useCart, useWishlist } from "../../context";
 import WishlistCard from "../../components/Card/WishlistCard";
 import "./wishlist.css";
 
-const Wishlist = () => {
+export const Wishlist = () => {
 	const { wishlistProducts, removeFromWishlist } = useWishlist();
 	const { addToCart } = useCart();
 	return (
@@ -70,5 +70,3 @@ const Wishlist = () => {
 		</>
 	);
 };
-
-export default Wishlist;

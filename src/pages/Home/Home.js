@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useFilter } from "../../context";
 import "./Home.css";
 
-export function Home() {
+export const Home = () => {
 	const [guitarCategories, setGuitarCategories] = useState();
 	const { dispatch } = useFilter();
 
@@ -74,4 +74,4 @@ export function Home() {
 			</main>
 		</>
 	);
-}
+};

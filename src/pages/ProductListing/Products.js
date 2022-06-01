@@ -13,7 +13,7 @@ import ProductCard from "../../components/Card/ProductCard";
 import "./Products.css";
 import { useProducts } from "../../context/product-context";
 
-export function Products() {
+export const Products = () => {
 	const { products, setProducts } = useProducts();
 	const { addToWishlist } = useWishlist();
 	const { addToCart } = useCart();
@@ -107,4 +107,4 @@ export function Products() {
 			</main>
 		</>
 	);
-}
+};
