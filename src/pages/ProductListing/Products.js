@@ -30,7 +30,7 @@ export function Products() {
 				console.error("ERROR: While fetching Products", error);
 			}
 		})();
-	}, [products]);
+	}, [setProducts]);
 
 	const sortedProducts = sortFunction(products, sortBy);
 	const filterdProducts = filterFunction(sortedProducts, categories);
