@@ -10,6 +10,12 @@ const Cart = () => {
 	const { addToWishlist } = useWishlist();
 	return (
 		<>
+			<div className="cart-title">
+				My Cart
+				<span className="cart-total">
+					({cartItems && cartItems.length} Items added)
+				</span>
+			</div>
 			{cartItems && cartItems.length > 0 ? (
 				<div className="cart-container">
 					<div className="cart-content">
