@@ -28,15 +28,17 @@ const ProductCard = ({
 					!inStock ? "out-of-stock-container" : "card-container"
 				}`}
 			>
-				<Link to={`/product/${_id}`}>
-					<div className="card-img-container">
+				<div className="card-img-container">
+					<Link to={`/product/${_id}`}>
 						<img
 							className="img-card"
 							src={img}
 							alt="product-card"
 							// onClick={() => navigate(`/product/${_id}`)}
 						/>
-					</div>
+					</Link>
+				</div>
+				<Link to={`/product/${_id}`}>
 					<div className="card-details-container">
 						<div className="card-product-brand">{brand}</div>
 						<h6 className="card-product-name">{title}</h6>
@@ -53,36 +55,36 @@ const ProductCard = ({
 							<i className="fa fa-star icon-star-rating"></i>
 						</p>
 					</div>
-					{cartItems && cartItems.find((e) => e._id === _id) ? (
-						<Link to="/cart">
-							<button className="btn btn-dark">Go to Cart</button>
-						</Link>
-					) : (
-						<button
-							className="btn btn-dark"
-							onClick={() => {
-								user.isLoggedIn ? addToCart() : navigate("/login");
-							}}
-						>
-							Add to Cart
-						</button>
-					)}
-
-					{wishlistProducts && wishlistProducts.find((e) => e._id === _id) ? (
-						<Link to="/wishlist">
-							<button className="btn btn-light"> Go to Wishlist </button>
-						</Link>
-					) : (
-						<button
-							className="btn btn-light"
-							onClick={() => {
-								user.token ? addToWishlist() : navigate("/login");
-							}}
-						>
-							Add to Wishlist
-						</button>
-					)}
 				</Link>
+				{cartItems && cartItems.find((e) => e._id === _id) ? (
+					<Link to="/cart">
+						<button className="btn btn-dark">Go to Cart</button>
+					</Link>
+				) : (
+					<button
+						className="btn btn-dark"
+						onClick={() => {
+							user.isLoggedIn ? addToCart() : navigate("/login");
+						}}
+					>
+						Add to Cart
+					</button>
+				)}
+
+				{wishlistProducts && wishlistProducts.find((e) => e._id === _id) ? (
+					<Link to="/wishlist">
+						<button className="btn btn-light"> Go to Wishlist </button>
+					</Link>
+				) : (
+					<button
+						className="btn btn-light"
+						onClick={() => {
+							user.token ? addToWishlist() : navigate("/login");
+						}}
+					>
+						Add to Wishlist
+					</button>
+				)}
 			</div>
 		</>
 	);
