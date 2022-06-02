@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import { Filter } from "../../components/index";
+import { useProducts, useFilter, useWishlist, useCart } from "../../context";
 import {
 	sortFunction,
 	categoriesFunction,
@@ -8,10 +9,8 @@ import {
 	priceRangeFunction,
 	ratingsProductFunction,
 } from "../../utilities";
-import { useFilter, useWishlist, useCart } from "../../context";
 import ProductCard from "../../components/Card/ProductCard";
 import "./Products.css";
-import { useProducts } from "../../context/product-context";
 
 export const Products = () => {
 	const { products, setProducts } = useProducts();
