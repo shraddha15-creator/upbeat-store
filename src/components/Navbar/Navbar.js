@@ -1,8 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/auth-context";
-import { useCart } from "../../context/cart-context";
-import { useWishlist } from "../../context/wishlist-context";
+import { useAuth, useCart, useWishlist } from "../../context";
 import "./style.css";
 
 export function Navbar() {
