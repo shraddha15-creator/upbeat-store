@@ -12,7 +12,6 @@ export const Home = () => {
 		try {
 			const response = await axios.get("/api/categories");
 			setGuitarCategories(response.data.categories);
-			console.log(response);
 		} catch (error) {
 			console.error(error);
 		}
