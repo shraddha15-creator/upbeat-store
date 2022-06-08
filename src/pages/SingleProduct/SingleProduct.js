@@ -1,17 +1,26 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { useAuth, useCart, useWishlist } from "../../context";
 import { useProducts } from "../../context/product-context";
 import { Page404 } from "../404page/Page404";
 import "./SingleProduct.css";
 
 export const SingleProduct = () => {
+	const navigate = useNavigate();
 	const { productId } = useParams();
+	const { user } = useAuth();
 	const { products } = useProducts();
+	const { getQt, cartItems, addToCart } = useCart();
+
+	const { wishlistProducts, addToWishlist } = useWishlist();
 
 	const getSingleProduct = (products, productId) => {
 		return products?.find((item) => item._id === productId);
 	};
 	const product = getSingleProduct(products, productId);
+	const { _id, img, brand, title, OriginalPrice, offerPrice, rating } = product;
+
+	const newQuantity = cartItems.find((item) => item._id === product._id);
 
 	return (
 		<>
@@ -23,7 +32,6 @@ export const SingleProduct = () => {
 							alt={product.title}
 							className="single-product-img"
 						/>
-
 						<div className="single-product-details">
 							<div className="product-status-like">
 								<h6 className="single-product-status">
@@ -32,7 +40,9 @@ export const SingleProduct = () => {
 							</div>
 							<h4 className="single-product-brand">{product.brand}</h4>
 							<h1 className="single-product-name">{product.title}</h1>
-							<p className="single-product-id">Item: #12345678</p>
+							<p className="single-product-id">
+								Item: #{product._id.slice(0, 8)}
+							</p>
 							<h5 className="single-product-ratings">
 								<i className="fa fa-star star"></i>
 								<i className="fa fa-tar star"></i>
@@ -42,16 +52,72 @@ export const SingleProduct = () => {
 							</h5>
 							<h2 className="single-product-price">INR {product.offerPrice}</h2>
 							<div className="single-product-quantity">
-								<button className="product-qnt-btn product-inc-btn">-</button>
-								<span className="product-quantity">1</span>
-								<button className="product-qnt-btn product-dec-btn">+</button>
+								<button
+									className="product-qnt-btn product-inc-btn"
+									onClick={() => getQt(product._id, "decrement")}
+								>
+									-
+								</button>
+								<span className="product-quantity">
+									{newQuantity && newQuantity.qty ? newQuantity.qty : "1"}
+								</span>
+								<button
+									className="product-qnt-btn product-dec-btn"
+									onClick={() => getQt(product._id, "increment")}
+								>
+									+
+								</button>
 							</div>
-							<button className="btn btn-with-links btn-dark">
-								Add to Cart
-							</button>
-							<button className="btn btn-with-links add-to-wshl-btn">
-								Add to Wishlist
-							</button>
+							<div>
+								{cartItems && cartItems.find((e) => e._id === product._id) ? (
+									<Link to="/cart">
+										<button className="btn btn-dark">Go to Cart</button>
+									</Link>
+								) : (
+									<button
+										className="btn btn-dark"
+										onClick={() => {
+											user.isLoggedIn
+												? addToCart({
+														_id,
+														img,
+														brand,
+														title,
+														OriginalPrice,
+														offerPrice,
+												  })
+												: navigate("/login");
+										}}
+									>
+										Add to Cart
+									</button>
+								)}
+								{wishlistProducts &&
+								wishlistProducts.find((e) => e._id === product._id) ? (
+									<Link to="/wishlist">
+										<button className="btn btn-light"> Go to Wishlist </button>
+									</Link>
+								) : (
+									<button
+										className="btn btn-light"
+										onClick={() => {
+											user.token
+												? addToWishlist({
+														_id,
+														img,
+														brand,
+														title,
+														OriginalPrice,
+														offerPrice,
+														rating,
+												  })
+												: navigate("/login");
+										}}
+									>
+										Add to Wishlist
+									</button>
+								)}
+							</div>
 						</div>
 					</div>
 					<div className="product-description-container">
@@ -81,8 +147,6 @@ export const SingleProduct = () => {
 					</Link>
 				</div>
 			)}
-
-			{/*  */}
 		</>
 	);
 };

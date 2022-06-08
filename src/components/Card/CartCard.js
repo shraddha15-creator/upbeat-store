@@ -42,30 +42,32 @@ const CartCard = ({ product }) => {
 					>
 						Remove from Cart
 					</button>
-					{wishlistProducts && wishlistProducts.find((e) => e._id === _id) ? (
-						<Link to="/wishlist">
-							<button className="btn btn-with-links add-to-wshl-btn">
-								Go to Wishlist
+					<div>
+						{wishlistProducts && wishlistProducts.find((e) => e._id === _id) ? (
+							<Link to="/wishlist">
+								<button className="btn btn-with-links add-to-wshl-btn">
+									Go to Wishlist
+								</button>
+							</Link>
+						) : (
+							<button
+								className="btn btn-with-links add-to-wshl-btn"
+								onClick={() =>
+									addToWishlist({
+										_id,
+										img,
+										brand,
+										title,
+										OriginalPrice,
+										offerPrice,
+										qty,
+									})
+								}
+							>
+								Add to Wishlist
 							</button>
-						</Link>
-					) : (
-						<button
-							className="btn btn-with-links add-to-wshl-btn"
-							onClick={() =>
-								addToWishlist({
-									_id,
-									img,
-									brand,
-									title,
-									OriginalPrice,
-									offerPrice,
-									qty,
-								})
-							}
-						>
-							Add to Wishlist
-						</button>
-					)}
+						)}
+					</div>
 				</div>
 			</div>
 		</>
