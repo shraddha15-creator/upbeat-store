@@ -37,7 +37,6 @@ export const filterReducerFunc = (state, action) => {
 				},
 			};
 		case "CATEGORY":
-			console.log(action.payload);
 			return {
 				...state,
 				category: {
