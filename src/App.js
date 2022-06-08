@@ -24,7 +24,7 @@ function App() {
 					<Route path="/mockman" element={<Mockman />} />
 					<Route path="/" element={<Home />} />
 					<Route path="/products" element={<Products />} />
-					<Route path="/product/:productId" element={<SingleProduct />} />
+					<Route path="/products/:productId" element={<SingleProduct />} />
 					<Route path="/login" element={<Login />} />
 					<Route path="/signup" element={<Signup />} />
 					{/* private route */}
