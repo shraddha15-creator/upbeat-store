@@ -11,6 +11,7 @@ export const SingleProduct = () => {
 	const { user } = useAuth();
 	const { products } = useProducts();
 	const { getQt, cartItems, addToCart } = useCart();
+	console.log("cart products", cartItems);
 
 	const { wishlistProducts, addToWishlist } = useWishlist();
 
@@ -20,7 +21,8 @@ export const SingleProduct = () => {
 	const product = getSingleProduct(products, productId);
 	const { _id, img, brand, title, OriginalPrice, offerPrice, rating } = product;
 
-	const newQuantity = cartItems.find((item) => item._id === product._id);
+	const newQuantity =
+		cartItems && cartItems.find((item) => item._id === product._id);
 
 	return (
 		<>
