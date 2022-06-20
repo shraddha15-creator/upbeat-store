@@ -18,6 +18,7 @@ export const Products = () => {
 	const { addToCart } = useCart();
 	const {
 		state: { sortBy, categories, category, priceRange, rating },
+		dispatch,
 	} = useFilter();
 
 	useEffect(() => {
@@ -30,6 +31,10 @@ export const Products = () => {
 			}
 		})();
 	}, [setProducts]);
+
+	useEffect(() => {
+		return () => dispatch({ type: "CLEAR" });
+	}, [dispatch]);
 
 	const sortedProducts = sortFunction(products, sortBy);
 	const filterdProducts = filterFunction(sortedProducts, categories);
