@@ -36,6 +36,13 @@ body {
     height: 19px;
 }
 
+label{
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+
 .products-all {
     width: 80%;
     height: auto;
@@ -123,8 +130,8 @@ body {
     content: 'Out of stock';
     position: absolute;
     z-index: 1;
-    width: 65.90%;
-    height: 96%;
+    max-width: 65.90%;
+    height: 98%;
     top: 0;
     left: 0.1rem;
     padding: 0.5rem 2rem;

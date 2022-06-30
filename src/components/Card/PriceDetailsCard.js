@@ -29,17 +29,6 @@ const PriceDetailsCard = () => {
 				</div>
 				<p className="cart-saving-msg">You will save 1999 on this order</p>
 				<button className="btn btn-with-links btn-dark">PLACE ORDER</button>
-				<p className="cart-saving-msg">Do you Coupon?</p>
-				<div className="price-details-total items-total">
-					<input
-						className="input-box coupon-btn"
-						type="text"
-						placeholder="Coupon code"
-					/>
-					<button className="btn btn-with-links btn-dark coupon-apply-btn">
-						APPLY
-					</button>
-				</div>
 			</div>
 		</>
 	);

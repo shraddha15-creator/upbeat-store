@@ -27,21 +27,23 @@ export function Navbar() {
 					</h3>
 				</div>
 
-				<div className="search-box">
+				{/* <div className="search-box">
 					<input type="text" className="input-search" placeholder="Search..." />
 					<i className="fa fa-search icon"></i>
-				</div>
+				</div> */}
 
 				<div className="right-nav">
 					<div className="badge-content">
 						<div className="badge">
 							<Link to="/cart">
 								<i className="fa fa-cart-plus icon"></i>
-								<div className="icon-badge">
-									<span className="badge-nums">
-										{cartItems && cartItems.length > 0 ? cartItems.length : 0}
-									</span>
-								</div>
+								{cartItems && cartItems.length > 0 && (
+									<div className="icon-badge">
+										<span className="badge-nums">
+											{cartItems && cartItems.length > 0 ? cartItems.length : 0}
+										</span>
+									</div>
+								)}
 							</Link>
 						</div>
 					</div>
@@ -49,9 +51,13 @@ export function Navbar() {
 						<div className="badge">
 							<Link to="/wishlist">
 								<i className="fa fa-heart icon"></i>
-								<div className="icon-badge">
-									<span className="badge-nums">{wishlistProducts.length}</span>
-								</div>
+								{wishlistProducts?.length && (
+									<div className="icon-badge">
+										<span className="badge-nums">
+											{wishlistProducts?.length}
+										</span>
+									</div>
+								)}
 							</Link>
 						</div>
 					</div>

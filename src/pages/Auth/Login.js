@@ -99,7 +99,7 @@ const Login = () => {
 								loginHandler(e, "adarshbalika@gmail.com", "adarshbalika")
 							}
 						>
-							Login with Test Account
+							Guest Login
 						</button>
 					</div>
 					<div className="login-form-subheading">
